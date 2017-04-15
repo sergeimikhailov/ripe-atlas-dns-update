@@ -1,0 +1,80 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/api/v2/probes/12345"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "prefix_v4": "122.56.60.0/24",
+      "status": {
+        "since": "2017-04-14T05:21:23Z",
+        "id": 1,
+        "name": "Connected"
+      },
+      "prefix_v6": null,
+      "description": "Your Probe Description",
+      "last_connected": 1492290014,
+      "tags": [
+        {
+          "name": "system: V2",
+          "slug": "system-v2"
+        },
+        {
+          "name": "system: Resolves A Correctly",
+          "slug": "system-resolves-a-correctly"
+        },
+        {
+          "name": "system: Resolves AAAA Correctly",
+          "slug": "system-resolves-aaaa-correctly"
+        },
+        {
+          "name": "system: IPv4 Works",
+          "slug": "system-ipv4-works"
+        },
+        {
+          "name": "system: IPv6 Doesn't Work",
+          "slug": "system-ipv6-doesnt-work"
+        },
+        {
+          "name": "system: IPv4 Capable",
+          "slug": "system-ipv4-capable"
+        },
+        {
+          "name": "system: IPv6 Capable",
+          "slug": "system-ipv6-capable"
+        },
+        {
+          "name": "system: IPv6 ULA",
+          "slug": "system-ipv6-ula"
+        },
+        {
+          "name": "system: IPv4 RFC1918",
+          "slug": "system-ipv4-rfc1918"
+        }
+      ],
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          159.0013,
+          -90.3017
+        ]
+      },
+      "type": "Probe",
+      "address_v6": "dead:beef:0000:0:000:b00b:5000:0000",
+      "address_v4": "122.56.60.0",
+      "total_uptime": 110542180,
+      "country_code": "NZ",
+      "is_public": true,
+      "id": 12345,
+      "asn_v4": 181001,
+      "asn_v6": null,
+      "status_since": 1492151244,
+      "first_connected": 1300174589,
+      "is_anchor": false
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
