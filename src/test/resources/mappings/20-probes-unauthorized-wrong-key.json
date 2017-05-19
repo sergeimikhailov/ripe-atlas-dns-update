@@ -1,0 +1,26 @@
+{
+  "priority": 20,
+  "request": {
+    "method": "ANY",
+    "urlPathPattern": "/api/v2/.*",
+    "queryParameters": {
+      "key": {
+        "doesNotMatch": "valid-api-key"
+      }
+    }
+  },
+  "response": {
+    "status": 403,
+    "jsonBody": {
+      "error": {
+        "status": 403,
+        "code": 104,
+        "detail": "The provided API key does not exist",
+        "title": "Forbidden"
+      }
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

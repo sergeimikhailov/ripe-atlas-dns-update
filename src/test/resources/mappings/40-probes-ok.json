@@ -1,4 +1,5 @@
 {
+  "priority": 40,
   "request": {
     "method": "GET",
     "urlPath": "/api/v2/probes/12345"
