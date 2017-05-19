@@ -1,5 +1,6 @@
 package nz.mikhailov.atlas.api.v2;
 
+import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.github.tomakehurst.wiremock.junit.WireMockRule;
 import nz.mikhailov.atlas.config.Configuration;
 import org.junit.Rule;
@@ -27,6 +28,9 @@ public class AuthenticatedAtlasProbeClientIntegrationTest {
   @Mock
   private Configuration configuration;
 
+  @Mock
+  private LambdaLogger logger;
+
   @Test
   public void shouldFormRequestWithValidKey() throws Exception {
 
@@ -47,6 +51,6 @@ public class AuthenticatedAtlasProbeClientIntegrationTest {
 
     when(configuration.getAtlasApiBaseUrl()).thenReturn("http://localhost:" + wireMockRule.port());
     when(configuration.getAtlasApiKey()).thenReturn(key);
-    return new AuthenticatedAtlasProbeClient(configuration);
+    return new AuthenticatedAtlasProbeClient(configuration, logger);
   }
 }

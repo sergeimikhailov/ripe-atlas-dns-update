@@ -1,5 +1,6 @@
 package nz.mikhailov.atlas.api.v2;
 
+import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import nz.mikhailov.atlas.config.Configuration;
 
 import javax.ws.rs.core.Response;
@@ -10,10 +11,13 @@ import static org.glassfish.jersey.client.proxy.WebResourceFactory.newResource;
 public class AuthenticatedAtlasProbeClient
     implements ProbeResource {
 
+  private final LambdaLogger logger;
+
   private final ProbeResource proxy;
 
-  public AuthenticatedAtlasProbeClient(Configuration configuration) {
+  public AuthenticatedAtlasProbeClient(Configuration configuration, LambdaLogger logger) {
 
+    this.logger = logger;
     this.proxy = newResource(
         ProbeResource.class,
         newClient()
@@ -24,6 +28,7 @@ public class AuthenticatedAtlasProbeClient
   @Override
   public Response get(int probeId) {
 
+    logger.log("Requesting probe with id: " + probeId);
     return proxy.get(probeId);
   }
 }
